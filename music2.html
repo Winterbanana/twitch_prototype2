@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #18181b;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            background-color: #9147ff;
+        }
+        .sidebar {
+            background-color: #1f1f23;
+            height: 100vh;
+            padding-top: 20px;
+        }
+        .music-card {
+            background-color: #26262c;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .music-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        audio {
+            width: 100%;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand logo" href="home.html">
+                <img src="./icons/twitch.png" alt="Twitch Logo">Twitch
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="browse.html"><img src="./icons/browse.png" alt="Browse" height="20"> Browse</a></li>
+                    <li class="nav-item"><a class="nav-link" href="follow.html"><img src="./icons/followers.png" alt="Following" height="20"> Following</a></li>
+                    <li class="nav-item"><a class="nav-link" href="esport.html"><img src="./icons/esports.png" alt="Esports" height="20"> Esports</a></li>
+                    <li class="nav-item"><a class="nav-link" href="music.html"><img src="./icons/music.png" alt="Music" height="20"> Music</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html" onclick="logout()"><img src="./icons/logout.png" alt="Logout" height="20"> Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <nav class="col-md-2 d-none d-md-block sidebar">
+                <h5 class="text-center">Following</h5>
+                <ul class="nav flex-column text-center">
+                    <li class="nav-item"><a class="nav-link text-white" href="https://www.youtube.com/results?search_query=yoasobi">Yoasobi</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="https://www.youtube.com/results?search_query=enhypen">Enhypen</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="https://www.youtube.com/channel/UCXPjxIofFid9z2JlKT6Jb3w">Iyaz</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="https://www.youtube.com/@HOYOMiX">Hoyo Mix</a></li>
+                </ul>
+            </nav>
+
+            <main class="col-md-10">
+                <h2 class="mt-4">Featured Artists</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="music-card">
+                            <img src="./musicicons/yoasobi.jpg" alt="Artist 1">
+                            <h5 class="mt-2">Artist: Yoasobi</h5>
+                            <p>Track: Into The Night</p>
+                            <audio controls>
+                                <source src="./musics/YOASOBI - Into The Night (English Ver.) Lyrics.mp3" type="audio/mp3">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="music-card">
+                            <img src="./musicicons/enhypen.jpg" alt="Artist 2">
+                            <h5 class="mt-2">Artist: Enhypen</h5>
+                            <p>Track: No Doubt</p>
+                            <audio controls>
+                                <source src="./musics/ENHYPEN (엔하이픈) 'No Doubt' (Color Coded Lyrics).mp3" type="audio/mp3">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="music-card">
+                            <img src="./musicicons/iyaz.jpg" alt="Artist 3">
+                            <h5 class="mt-2">Artist: Iyaz</h5>
+                            <p>Track: Replay</p>
+                            <audio controls>
+                                <source src="./musics/Iyaz - Replay  Lyrics.mp3" type="audio/mp3">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="mt-4">More Tracks</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="music-card">
+                            <img src="./musicicons/rubia.jpg" alt="Artist 4">
+                            <h5 class="mt-2">Artist: Zhou Shen </h5>
+                            <p>Track: Rubia</p>
+                            <audio controls>
+                                <source src="./musics/Rubia.mp3" type="audio/mp3">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="music-card">
+                            <img src="./musicicons/regression.jpg" alt="Artist 5">
+                            <h5 class="mt-2">Artist: Ayanga</h5>
+                            <p>Track: Regression</p>
+                            <audio controls>
+                                <source src="./musics/Regression.mp3" type="audio/mp3">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="music-card">
+                            <img src="./musicicons/nightglow.jpg" alt="Artist 6">
+                            <h5 class="mt-2">Artist: Tanya Chua</h5>
+                            <p>Track: Nightglow</p>
+                            <audio controls>
+                                <source src="./musics/Nightglow (崩坏3印象曲).mp3" type="audio/mp3">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function logout() {
+          sessionStorage.clear(); // Clear any session data (like username)
+          alert("You have been logged out.");
+          window.location.href = "index.html"; // Redirect to login page
+        }
+      </script>
+</body>
+</html>

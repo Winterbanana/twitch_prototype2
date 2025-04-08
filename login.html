@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up | Twitch</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <style>
+    body {
+      background-color: #0e0e10;
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .signup-box {
+      background-color: #18181b;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 30px rgba(145, 71, 255, 0.3);
+      width: 100%;
+      max-width: 420px;
+      animation: fadeIn 1.2s ease;
+    }
+
+    .signup-box h2 {
+      margin-bottom: 25px;
+      color: #fff;
+      text-align: center;
+    }
+
+    .twitch-logo {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+      animation: scaleIn 0.8s ease;
+    }
+
+    .twitch-logo img {
+      height: 60px;
+    }
+
+    .form-control {
+      background-color: #0e0e10;
+      border: 1px solid #9147ff;
+      color: white;
+    }
+
+    .form-control:focus {
+      border-color: #772ce8;
+      box-shadow: 0 0 5px rgba(145, 71, 255, 0.5);
+      background-color: #18181b;
+    }
+
+    .btn-purple {
+      background-color: #9147ff;
+      border: none;
+      width: 100%;
+      margin-top: 15px;
+    }
+
+    .btn-purple:hover {
+      background-color: #772ce8;
+    }
+
+    .toggle-password {
+      position: absolute;
+      right: 15px;
+      top: 35px;
+      cursor: pointer;
+      color: #aaa;
+    }
+
+    .position-relative {
+      position: relative;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes scaleIn {
+      0% { transform: scale(0.5); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="signup-box">
+    <div class="twitch-logo">
+      <img src="./icons/twitch.png" alt="Twitch Logo" />
+    </div>
+    <h2>Create Your Account</h2>
+    <form id="signupForm">
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" class="form-control" id="username" required />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="email" required />
+      </div>
+      <div class="mb-3 position-relative">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" required />
+        <span class="toggle-password" onclick="togglePassword()">👁️</span>
+      </div>
+      <button type="submit" class="btn btn-purple">Sign Up</button>
+    </form>
+  </div>
+
+  <script>
+    function togglePassword() {
+      const passwordField = document.getElementById("password");
+      passwordField.type = passwordField.type === "password" ? "text" : "password";
+    }
+
+    document.getElementById("signupForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const username = document.getElementById("username").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      if (username.length < 3 || password.length < 6) {
+        alert("Username must be at least 3 characters and password at least 6.");
+        return;
+      }
+
+      // For demo purposes, store user session (in reality, use a backend)
+      sessionStorage.setItem("username", username);
+      alert("Sign Up Successful! Redirecting to login...");
+      window.location.href = "index.html";
+    });
+  </script>
+</body>
+</html>

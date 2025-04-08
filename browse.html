@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search - Twitch UI</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #18181b;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            background-color: #9147ff;
+        }
+        .sidebar {
+            background-color: #1f1f23;
+            height: 100vh;
+            padding-top: 20px;
+        }
+        .stream-card {
+            background-color: #26262c;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .stream-card video, .stream-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        .highlight {
+            background-color: yellow;
+            color: black;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand logo" href="home.html">
+                <img src="./icons/twitch.png" alt="Twitch Logo">Twitch
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+                <!-- Search Form -->
+                <form class="d-flex ms-3" role="search" onsubmit="event.preventDefault(); searchContent();">
+                    <input class="form-control me-2" type="search" placeholder="Search..." id="searchInput">
+                    <button class="btn btn-light" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+        
+            <nav class="col-md-2 d-none d-md-block sidebar">
+                <h5 class="text-center">Following</h5>
+                <ul class="nav flex-column text-center">
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Uncle Rogers</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">ShinmenTakezo</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">LofiVibes</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Beluga</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Iyaz</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Enhypen</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Yoasobi</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">HOYOMiX</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Mumbo Jumbo</a></li>
+                </ul>
+            </nav>
+
+            <main class="col-md-10">
+                <div class="mt-4">
+                    <h2>Search Page</h2>
+                    <p>This page allows you to search across stream titles, streamers, and other page content. Try typing keywords like <strong>"anime"</strong>, <strong>"esports"</strong>, or <strong>"music"</strong>.</p>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-md-4">
+                        <div class="stream-card">
+                            <video src="./videos/5.mp4" controls loop></video>
+                            <h5>Anime Live 5</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="stream-card">
+                            <video src="./videos/9.mp4" controls loop></video>
+                            <h5>Anime Live 9</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="stream-card">
+                            <video src="./videos/2.mp4" controls loop></video>
+                            <h5>Anime Live 2</h5>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Search Script -->
+    <script>
+        function searchContent() {
+            const input = document.getElementById("searchInput").value.toLowerCase();
+            const targets = document.querySelectorAll("main, .sidebar, .navbar");
+
+            // Remove previous highlights
+            document.querySelectorAll('.highlight').forEach(el => {
+                el.outerHTML = el.innerText;
+            });
+
+            if (input.trim() === "") return;
+
+            targets.forEach(section => {
+                const regex = new RegExp(`(${input})`, 'gi');
+                section.innerHTML = section.innerHTML.replace(regex, '<span class="highlight">$1</span>');
+            });
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

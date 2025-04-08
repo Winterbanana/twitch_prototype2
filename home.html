@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitch UI</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #18181b;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            background-color: #9147ff;
+        }
+        .sidebar {
+            background-color: #1f1f23;
+            height: 100vh;
+            padding-top: 20px;
+        }
+        .stream-card {
+            background-color: #26262c;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .stream-card video, .stream-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+    </style>
+
+</head>
+<body>
+ 
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand logo" href="home.html">
+                <img src="./icons/twitch.png" alt="Twitch Logo">Twitch
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto"> 
+                    <li class="nav-item"><a class="nav-link" href="browse.html"><img src="./icons/browse.png" alt="Browse" height="20"> Browse</a></li>
+                    <li class="nav-item"><a class="nav-link" href="follow.html"><img src="./icons/followers.png" alt="Following" height="20"> Following</a></li>
+                    <li class="nav-item"><a class="nav-link" href="esport.html"><img src="./icons/esports.png" alt="Esports" height="20"> Esports</a></li>
+                    <li class="nav-item"><a class="nav-link" href="music.html"><img src="./icons/music.png" alt="Music" height="20"> Music</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html" onclick="logout()"><img src="./icons/logout.png" alt="Logout" height="20"> Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container-fluid">
+        <div class="row">
+      
+            <nav class="col-md-2 d-none d-md-block sidebar">
+                <h5 class="text-center">Following</h5>
+                <ul class="nav flex-column text-center">
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Uncle Rogers</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">ShinmenTakezo</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">LofiVibes</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Beluga</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Iyaz</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Enhypen</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Yoasobi</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">HOYOMiX</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Mumbo Jumbo</a></li>
+                </ul>
+            </nav>
+            
+            <main class="col-md-10">
+                <h2 class="mt-4">Live Anime Streams</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="stream-card">
+                            <video src="./videos/1.mp4" controls autoplay loop></video>
+                            <h5>Anime Live 1</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="stream-card">
+                            <video src="./videos/2.mp4" controls autoplay loop></video>
+                            <h5>Anime Live 2</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="stream-card">
+                            <video src="./videos/3.mp4" controls autoplay loop></video>
+                            <h5>Anime Live 3</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mt-3">
+                        <div class="stream-card">
+                            <video src="./videos/4.mp4" controls autoplay loop></video>
+                            <h5>Anime Live 4</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mt-3">
+                        <div class="stream-card">
+                            <video src="./videos/5.mp4" controls autoplay loop></video>
+                            <h5>Anime Live 5</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mt-3">
+                        <div class="stream-card">
+                            <video src="./videos/6.mp4" controls autoplay loop></video>
+                            <h5>Anime Live 6</h5>
+                        </div>
+                    </div>
+                </div>
+                
+                <h2 class="mt-4">More Live Streams</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="stream-card">
+                            <video src="./videos/7.mp4" controls autoplay loop></video>
+                            <h5>Anime Live 7</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="stream-card">
+                            <video src="./videos/8.mp4" controls autoplay loop></video>
+                            <h5>Anime Live 8</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="stream-card">
+                            <video src="./videos/9.mp4" controls autoplay loop></video>
+                            <h5>Anime Live 9</h5>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function logout() {
+          sessionStorage.clear(); // Clear any session data (like username)
+          alert("You have been logged out.");
+          window.location.href = "index.html"; // Redirect to login page
+        }
+      </script>
+</body>
+</html>

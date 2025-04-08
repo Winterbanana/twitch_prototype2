@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Following - Twitch</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      background-color: #18181b;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      background-color: #9147ff;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .nav-link img {
+      margin-right: 5px;
+    }
+
+    .following-card {
+      background-color: #26262c;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    .following-card img {
+      height: 60px;
+      width: 60px;
+      border-radius: 50%;
+      margin-right: 15px;
+    }
+
+    .status {
+      font-size: 14px;
+      color: #a0a0a0;
+    }
+
+    .live-badge {
+      background-color: red;
+      color: white;
+      padding: 3px 8px;
+      border-radius: 5px;
+      font-size: 12px;
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand logo" href="home.html">
+                <img src="./icons/twitch.png" alt="Twitch Logo">Twitch
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="browse.html"><img src="./icons/browse.png" alt="Browse" height="20"> Browse</a></li>
+                    <li class="nav-item"><a class="nav-link" href="follow.html"><img src="./icons/followers.png" alt="Following" height="20"> Following</a></li>
+                    <li class="nav-item"><a class="nav-link" href="esport.html"><img src="./icons/esports.png" alt="Esports" height="20"> Esports</a></li>
+                    <li class="nav-item"><a class="nav-link" href="music.html"><img src="./icons/music.png" alt="Music" height="20"> Music</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html" onclick="logout()"><img src="./icons/logout.png" alt="Logout" height="20"> Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+  <div class="container mt-4">
+    <h2>Your Following</h2>
+    
+    <div class="following-card">
+      <img src="./followingicons/shinmen.jpg" alt="STTV" />
+      <div>
+        <h5>ShinmenTakezo YT<span class="live-badge">LIVE</span></h5>
+        <p class="status">Streaming: Mobile Legends</p>
+      </div>
+    </div>
+
+    <div class="following-card">
+      <img src="./followingicons/beluga.jpg" alt="bg" />
+      <div>
+        <h5>Beluga</h5>
+        <p class="status">Offline • Last Stream: 3 hours ago</p>
+      </div>
+    </div>
+
+    <div class="following-card">
+      <img src="./followingicons/lofi.jpg" alt="LofiVibes" />
+      <div>
+        <h5>LofiVibes<span class="live-badge">LIVE</span></h5>
+        <p class="status">Streaming: Study & Relax Music</p>
+      </div>
+    </div>
+
+    <div class="following-card">
+      <img src="./followingicons/mumbo.jpg" alt="mb" />
+      <div>
+        <h5>Mumbo Jumbo</h5>
+        <p class="status">Offline • Last Stream: Yesterday</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    function logout() {
+      sessionStorage.clear(); // Clear any session data (like username)
+      alert("You have been logged out.");
+      window.location.href = "index.html"; // Redirect to login page
+    }
+  </script>
+</body>
+</html>
